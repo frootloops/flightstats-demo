@@ -28,7 +28,7 @@ describe("airport search", function() {
       .get('/airports?q=svo')
       .expect(200)
       .end(function(e, res) {
-        expect(res.body).to.eql([ 'Moscow (SVO)' ])
+        expect(res.body).to.eql([ { val: 'Moscow (SVO)' } ])
         done(e)
       });
   });

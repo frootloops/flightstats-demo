@@ -15,7 +15,7 @@ Airport.prototype.fetchRemote = function(done) {
     if (error) return done(error);
 
     this.cache  = _.map(body['airports'], function(a) {
-      return a['city'] + ' (' + a['fs'] + ')'
+      return { val:  a['city'] + ' (' + a['fs'] + ')' }
     });
 
     return done(null, this.cache);
@@ -29,7 +29,7 @@ Airport.prototype.fetch = function(query, done) {
     if (e) return done(e);
 
     var result = _.filter(airports, function(a) {
-      return !query || a.toLowerCase().indexOf(query.toLowerCase()) > -1
+      return !query || a.val.toLowerCase().indexOf(query.toLowerCase()) > -1
     });
 
     done(null, result);

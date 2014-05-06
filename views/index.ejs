@@ -3,9 +3,13 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="http://twitter.github.io/typeahead.js/css/examples.css">
+    <script src="http://twitter.github.io/typeahead.js/js/jquery-1.10.2.min.js"></script>
+    <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <script src="/javascripts/autocomplete.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <input class="typeahead from" type="text" placeholder="From" />
+    <input class="typeahead to" type="text" placeholder="To" />
   </body>
 </html>
